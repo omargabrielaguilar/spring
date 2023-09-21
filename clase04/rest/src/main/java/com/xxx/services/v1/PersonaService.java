@@ -57,15 +57,16 @@ public class PersonaService implements BaseService<PersonaEntity>{
     @Override
     @Transactional
     public PersonaEntity update(Long id, PersonaEntity entity) throws Exception {
-        try {
-            Optional<PersonaEntity> personaEntity = personaRepository.findById(id);
-            PersonaEntity persona = personaEntity.get();
+        try{
+            Optional<PersonaEntity> entityOptional = personaRepository.findById(id);
+            PersonaEntity persona = entityOptional.get();
             persona = personaRepository.save(entity);
             return persona;
-        }catch (Exception e) {
+        } catch(Exception e){
             throw new Exception(e.getMessage());
         }
     }
+
 
     @Override
     @Transactional

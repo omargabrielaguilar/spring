@@ -54,15 +54,17 @@ public abstract class BaseNewServiceImpl<E extends BaseEntity, ID extends Serial
     @Override
     @Transactional
     public E update(ID id, E entity) throws Exception {
-        try {
+        try{
             Optional<E> entityOptional = baseRepository.findById(id);
             E entityUpdate = entityOptional.get();
             entityUpdate = baseRepository.save(entity);
             return entityUpdate;
-        }catch (Exception e) {
+        } catch(Exception e){
             throw new Exception(e.getMessage());
         }
     }
+
+
 
     @Override
     @Transactional
