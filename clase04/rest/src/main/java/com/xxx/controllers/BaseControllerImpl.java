@@ -5,13 +5,19 @@ import com.xxx.services.BaseNewServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import java.io.Serializable;
 
 public class BaseControllerImpl <E extends BaseEntity, S extends BaseNewServiceImpl<E, Long>> implements BaseController<E, Long> {
+
+    @Autowired
     protected S servicio;
 
-    @Override
+    @GetMapping("")
     public ResponseEntity<?> getAll() {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.findAll());
@@ -20,7 +26,7 @@ public class BaseControllerImpl <E extends BaseEntity, S extends BaseNewServiceI
         }
     }
 
-    @Override
+    @GetMapping("/{id}")
     public ResponseEntity<?> getOne(Long id) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.findById(id));
@@ -29,7 +35,7 @@ public class BaseControllerImpl <E extends BaseEntity, S extends BaseNewServiceI
         }
     }
 
-    @Override
+    @PostMapping("")
     public ResponseEntity<?> save(E entity) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.save(entity));
@@ -38,7 +44,7 @@ public class BaseControllerImpl <E extends BaseEntity, S extends BaseNewServiceI
         }
     }
 
-    @Override
+    @PutMapping("/{id}")
     public ResponseEntity<?> update(Long id, E entity) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.update(id, entity));
@@ -47,7 +53,7 @@ public class BaseControllerImpl <E extends BaseEntity, S extends BaseNewServiceI
         }
     }
 
-    @Override
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(Long id) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.delete(id));
