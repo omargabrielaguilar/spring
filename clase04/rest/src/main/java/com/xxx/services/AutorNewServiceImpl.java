@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AutorNewServiceImpl extends BaseNewServiceImpl<AutorEntity, Long> implements AutorNewService{
-
     @Autowired
     private AutorRepository autorRepository;
 

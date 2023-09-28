@@ -64,8 +64,6 @@ public abstract class BaseNewServiceImpl<E extends BaseEntity, ID extends Serial
         }
     }
 
-
-
     @Override
     @Transactional
     public boolean delete(ID id) throws Exception {
