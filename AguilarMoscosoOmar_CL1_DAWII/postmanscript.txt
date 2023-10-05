@@ -1,0 +1,40 @@
+Registrar categorias
+{
+  "nombre":"Categoría A"
+}
+
+{
+  "nombre":"Categoría B"
+}
+
+{
+  "nombre":"Categoría C"
+}
+
+------------------------------------------------------
+{
+  "nombre": "John",
+  "dni": "98765432",
+  "fechaNacimiento": "1990-01-01",
+  "sueldo": 50000.0,
+  "email": "john@example.com",
+  "sexo": "Masculino",
+  "categoria": {
+    "id": 1,
+    "nombre": "Categoría A"
+  }
+}
+
+
+{
+  "nombre": "Omar",
+  "dni": "938452232",
+  "fechaNacimiento": "2001-04-09",
+  "sueldo": 20000.0,
+  "email": "omar@example.com",
+  "sexo": "Masculino",
+  "categoria": {
+    "id": 3,
+    "nombre": "Categoría C"
+  }
+}
