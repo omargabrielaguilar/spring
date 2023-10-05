@@ -31,7 +31,7 @@ public class ProductEntity {
     private ProductStatus status;
     private DeletedProduct deleted;
 
-    @ManyToOne(fetch = FetchType.Lazy)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private CategoryEntity category;
 
