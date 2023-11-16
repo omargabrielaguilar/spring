@@ -1,1 +1,11 @@
-<p>user works!</p>
+<h2>Soy Omar</h2>
+
+@if (calificacion) {
+    <p>Aprobaste</p>
+} @else {
+    <p>Desaprobo</p>
+}
+
+@for (est of lstEstudiantes; track est.id) {
+    <li> {{ est.id }} => {{ est.name }}</li>
+}
