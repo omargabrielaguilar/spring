@@ -1,4 +1,4 @@
-<h2>Soy Omar</h2>
+<h2>Mi nombre es Omar, y soy el {{ ocupacion }} del curso</h2>
 
 @if (calificacion) {
     <p>Aprobaste</p>
@@ -6,6 +6,9 @@
     <p>Desaprobo</p>
 }
 
-@for (est of lstEstudiantes; track est.id) {
-    <li> {{ est.id }} => {{ est.name }}</li>
-}
+<h2>Lista de estudiantes</h2>
+<ul>
+   @for (est of lstEstudiantes; track est.id) {
+       <li (mouseover)="onMouseOver(est.name)" > {{ est.id }}, {{ est.name }} </li>
+   }
+</ul>

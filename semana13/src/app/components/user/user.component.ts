@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
+
 export class UserComponent {
   calificacion: boolean = true;
   lstEstudiantes = [
@@ -19,5 +20,11 @@ export class UserComponent {
     {id: 6, name: 'Favio'},
     {id: 7, name: 'Marlon'},
     {id: 8, name: 'Dayanne'}
-  ]
+  ];
+
+  onMouseOver(estName: string): void{
+    console.log(estName)
+  }
+
+  @Input() ocupacion: string = ""
 }

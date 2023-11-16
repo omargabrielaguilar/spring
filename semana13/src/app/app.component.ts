@@ -16,4 +16,5 @@ import { UserComponent } from './components/user/user.component';
 
 export class AppComponent {
   Curso = 'Curso de Angular';
+  userOcupacion : string = "Docente"
 }
