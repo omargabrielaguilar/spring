@@ -6,9 +6,13 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  template:`<h2>Hola!!</h2>`,
+  //templateUrl: './app.component.html',
+  styles: `h2{color: blue;}`
+  //styleUrl: './app.component.css'
 })
+
+
 export class AppComponent {
-  title = 'semana13';
+  Curso = 'Curso de Angular';
 }
